@@ -1,0 +1,9 @@
+.profile__avatar {
+  max-width: 120px;
+  max-height: 120px;
+}
+
+.profile__avatar:hover {
+  background: url('../../../images/profile_change-avatar.svg') no-repeat center;
+  background-size: 26px;
+}

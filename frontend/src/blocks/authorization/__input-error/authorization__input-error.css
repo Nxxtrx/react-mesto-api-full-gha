@@ -1,0 +1,9 @@
+.authorization__input-error {
+  color: #ad2020;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(15/12);
+  display: block;
+  margin-top: 5px;
+  min-height: 30px;
+}

@@ -1,0 +1,10 @@
+.cards__subtitle {
+  max-width: calc(246px - 44px);
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: calc(29/24);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

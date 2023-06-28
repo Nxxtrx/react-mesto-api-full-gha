@@ -1,0 +1,12 @@
+.authorization__button_type_inactive {
+  cursor: default;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  opacity: .2;
+
+}
+
+.authorization__button_type_inactive:hover {
+  opacity: .2;
+}

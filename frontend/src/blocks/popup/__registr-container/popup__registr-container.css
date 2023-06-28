@@ -1,0 +1,10 @@
+.popup__registr-container {
+  position: relative;
+  background-color: #fff;
+  width: 430px;
+  height: 330px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

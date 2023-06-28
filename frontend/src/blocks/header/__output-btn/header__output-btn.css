@@ -1,0 +1,15 @@
+.header__output-btn {
+  color: #A9A9A9;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: calc(22/18);
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .2s linear;
+}
+
+.header__output-btn:hover {
+  opacity: .7;
+}

@@ -49,7 +49,7 @@ function App() {
       }).catch(err => console.log(`Ошибка: ${err}`));
 
       api.getInitialCards().then(data => {
-        setCards(data)
+        setCards(data.reverse())
       }).catch(err => console.log(`Ошибка: ${err}`));
     }
   }, [loggedIn])
@@ -88,7 +88,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(like => like._id === currentUser._id);
+    const isLiked = card.likes.some(like => like === currentUser._id);
 
     api.changeLikeCardStatus(card._id, isLiked).then((newCard) => {
       setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
@@ -133,11 +133,11 @@ function App() {
   }
 
   function handletokenCheck() {
-    if(localStorage.getItem('jwt')) {
-      const jwt = localStorage.getItem('jwt');
+    if(localStorage.getItem('userId')) {
+      const jwt = localStorage.getItem('userId');
       auth.checkToken(jwt).then((res) => {
-        if(res) {
-          setEmailAuth(res.data.email)
+        if(res._id) {
+          setEmailAuth(res.email)
           setLoggedIn(true);
           navigate('/')
         }
@@ -147,7 +147,7 @@ function App() {
 
   function handleAuthUser(password, email) {
     auth.authorize(password, email).then((data) => {
-      if (data) {
+      if (data._id) {
         setEmailAuth(email)
         handleLogin()
         navigate('/')
@@ -157,8 +157,7 @@ function App() {
 
   function handleRegistrUser(password, email) {
     auth.registr(password, email).then((res) => {
-      console.log(res)
-      if (res.data) {
+      if (res) {
         setRegistrationStatus(true)
         handleSubmitRegistr()
         navigate('/sign-in')
@@ -173,7 +172,7 @@ function App() {
   }
 
   function signOut() {
-    localStorage.removeItem('jwt')
+    localStorage.removeItem('userId')
     setLoggedIn(false)
     setEmailAuth('')
     navigate('/sign-in')

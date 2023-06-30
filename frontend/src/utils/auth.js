@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'https://https://api.nxxtrx.nomoreparties.sbs';
 
 export const registr = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -18,6 +18,7 @@ export const registr = (password, email) => {
 export const authorize = (password, email) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
+    credentials: "include",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -25,19 +26,18 @@ export const authorize = (password, email) => {
     body: JSON.stringify({password, email})
   }).then((response) => response.json())
   .then((data) => {
-    localStorage.setItem('jwt', data.token)
-    return data.token
+    localStorage.setItem('userId', data._id)
+    return data
   }).catch((err) => console.log(err))
 }
 
 export const checkToken = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
-      "Authorization" : `Bearer ${token}`
     }
   }).then((res) => res.json())
-    .then((data) => data)
     .catch((err) => console.log(err))
 }

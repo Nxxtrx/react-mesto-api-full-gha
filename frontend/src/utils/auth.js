@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://https://api.nxxtrx.nomoreparties.sbs';
+export const BASE_URL = 'https://api.nxxtrx.nomoreparties.sbs';
 
 export const registr = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {

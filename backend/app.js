@@ -10,7 +10,7 @@ const { requestLogger, errorLogger } = require('./middlwares/logger');
 
 const app = express();
 
-app.use(cors({ origin: ['http://localhost:3001', 'https://nxxtrx.nomoreparties.sbs/'], credentials: true, maxAge: 360000 }));
+app.use(cors({ origin: ['http://localhost:3001', 'https://nxxtrx.nomoreparties.sbs', 'http://nxxtrx.nomoreparties.sbs'], credentials: true, maxAge: 360000 }));
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,

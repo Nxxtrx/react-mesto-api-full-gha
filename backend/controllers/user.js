@@ -2,6 +2,8 @@ const jsonWebToken = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictingRequestError = require('../errors/ConflictingRequestError');
 const NotFoundError = require('../errors/NotFoundError');
@@ -62,7 +64,7 @@ const login = (req, res, next) => {
           if (isValidUser) {
             const jwt = jsonWebToken.sign({
               _id: user._id,
-            }, 'SUPER_PASSWORD');
+            }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
 
             res.cookie('jwt', jwt, {
               maxAge: 3600 * 24 * 7,

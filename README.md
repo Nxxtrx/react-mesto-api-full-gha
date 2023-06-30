@@ -5,12 +5,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/Nxxtrx/react-mesto-api-full-gha
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.115.118
 
-Frontend https://...
+Frontend https://nxxtrx.nomoreparties.sbs
 
-Backend https://...
+Backend https://api.nxxtrx.nomoreparties.sbs

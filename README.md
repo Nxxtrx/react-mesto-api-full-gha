@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.115.118
+IP 158.160.115.118
 
 Frontend https://nxxtrx.nomoreparties.sbs
 
